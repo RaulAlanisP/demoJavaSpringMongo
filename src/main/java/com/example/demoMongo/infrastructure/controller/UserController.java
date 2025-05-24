@@ -16,7 +16,7 @@ import java.util.List;
  * Proporciona endpoints para consultar, actualizar y eliminar usuarios.
  */
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/api/v1/user")
 @RequiredArgsConstructor
 public class UserController {
 
