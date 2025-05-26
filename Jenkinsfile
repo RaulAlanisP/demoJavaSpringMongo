@@ -21,8 +21,8 @@ pipeline {
         stage('Push image to Hub'){
             steps{
                 script{
-                   withCredentials([string(credentialsId: 'docker-hub-pwd', variable: 'docker-hub-pwd')]) {
-                       sh 'docker login -u raulalanis --password-stdin ${docker-hub-pwd}'
+                   withCredentials([string(credentialsId: 'docker-hub-pwd', variable: 'dockerhubpwd')]) {
+                       sh 'docker login -u raulalanis --password-stdin ${dockerhubpwd}'
                    }
                    sh 'docker push raulalanis/spring-boot-mongo'
                 }
