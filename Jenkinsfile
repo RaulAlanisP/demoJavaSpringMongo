@@ -14,7 +14,7 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
-                    sh 'docker build -t raulalanis/demoSpringBootMongoDB .'
+                    sh 'docker build -t raulalanis/spring-boot-mongo .'
                 }
             }
         }
