@@ -22,7 +22,7 @@ pipeline {
             steps{
                 script{
                    withCredentials([string(credentialsId: 'docker-hub-pwd', variable: 'dockerhubpwd')]) {
-                       sh 'docker login -u raulalanis --password-stdin ${dockerhubpwd}'
+                       sh 'docker login -u raulalanis -p ${dockerhubpwd}'
                    }
                    sh 'docker push raulalanis/spring-boot-mongo'
                 }
