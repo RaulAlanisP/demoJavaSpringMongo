@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         DOCKER_USER = 'raulalanis'
-        DOCKER_PASS = credentials('docker-hub-pwd')
+        DOCKER_PASS = credentials('Dockerhub-token')
     }
     stages {
         stage('Clone Repo') {
@@ -31,7 +31,7 @@ pipeline {
 //                    }
 //                    sh 'docker push raulalanis/spring-boot-mongo'
 
-                    docker.withRegistry('https://index.docker.io/v1/', 'docker-hub-pwd') {
+                    docker.withRegistry('https://index.docker.io/v1/', 'Dockerhub-token') {
                         def app = docker.image('raulalanis/spring-boot-mongo')
                         app.push()
                     }
